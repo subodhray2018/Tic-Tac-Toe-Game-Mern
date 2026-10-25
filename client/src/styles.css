@@ -1,0 +1,307 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #1b2236;
+  background: #f5f7fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f5f7fc;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: #f5f7fc;
+}
+
+.app-header {
+  height: auto;
+  min-height: 76px;
+  line-height: normal;
+  padding: 16px 5%;
+  background: #fff;
+  border-bottom: 1px solid #e9edf5;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.app-title.ant-typography {
+  margin: 0;
+  font-weight: 800;
+  color: #1b2236;
+}
+
+.app-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px 48px;
+}
+
+.game-card {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(27, 34, 54, 0.06);
+}
+
+.play-card .ant-card-body {
+  padding: 8px;
+}
+
+.play-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.status-wrap {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.modes {
+  border-radius: 10px;
+}
+
+.board {
+  width: min(100%, 320px);
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.cell-wrap {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+  border: 2px solid #e5eaf4;
+}
+
+.cell-wrap.winning-cell {
+  border-color: #ffe35c;
+}
+
+
+
+.cell.ant-btn:not(:disabled):hover,
+.cell.ant-btn:not(:disabled):focus-visible {
+  background: rgba(43, 63, 214, 0.06);
+}
+
+.mark {
+  display: block;
+  width: 60%;
+  height: 60%;
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.mark.x {
+  stroke: #2b3fd6;
+}
+
+.mark.o {
+  stroke: #0e8a5f;
+}
+
+.cell.ant-btn {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 14px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cell.ant-btn:not(:disabled):hover,
+.cell.ant-btn:not(:disabled):focus-visible {
+  background: rgba(43, 63, 214, 0.06);
+}
+
+.cell.ant-btn:disabled {
+  color: inherit;
+  cursor: default;
+  background: transparent;
+}
+
+.game-actions {
+  justify-content: center;
+}
+
+.sidebar {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar > .ant-space-item {
+  width: 100%;
+}
+
+.card-heading {
+  margin: 0 0 24px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1b2236;
+}
+
+
+.scoreboard-card {
+  width: 100%;
+  min-width: 0;
+}
+
+.scoreboard-card .ant-card-body {
+  padding: 24px;
+}
+
+.scoreboard-card .card-heading {
+  margin: 0 0 24px;
+  text-align: left;
+}
+
+.scoreboard-row {
+  width: 100%;
+}
+
+.scoreboard-col {
+  min-width: 0;
+  text-align: center;
+}
+
+.scoreboard-stat {
+  width: 100%;
+  min-width: 0;
+}
+
+.scoreboard-stat .ant-statistic {
+  text-align: center;
+}
+
+.scoreboard-stat .ant-statistic-title {
+  min-height: 40px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.scoreboard-stat .ant-statistic-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-reset {
+  margin-top: 24px;
+  height: 40px;
+  font-weight: 600;
+}
+
+@media (max-width: 400px) {
+  .scoreboard-card .ant-card-body {
+    padding: 16px 12px;
+  }
+
+  .scoreboard-stat .ant-statistic-title {
+    font-size: 11px;
+  }
+
+  .scoreboard-stat .ant-statistic-content {
+    font-size: 22px;
+  }
+}
+
+
+.offline-content,
+.loading-content {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.offline-card {
+  width: min(100%, 480px);
+}
+
+.retry-button {
+  margin-top: 20px;
+}
+
+@media (max-width: 576px) {
+  .app-header {
+    padding: 16px;
+  }
+
+  .app-title.ant-typography {
+    font-size: 24px;
+  }
+
+  .app-content {
+    padding: 20px 12px 32px;
+  }
+
+  .play-card .ant-card-body {
+    padding: 18px 12px;
+  }
+
+  .board {
+    gap: 7px;
+  }
+
+  .cell-wrap {
+    border-radius: 12px;
+  }
+
+  .game-actions {
+    width: 100%;
+  }
+
+  .game-actions .ant-btn {
+    flex: 1;
+  }
+}

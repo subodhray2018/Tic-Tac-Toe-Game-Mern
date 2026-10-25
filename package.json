@@ -1,0 +1,14 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tic Tac Toe: React frontend + Node/Express REST backend",
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently -n server,client -c blue,green \"npm --prefix server start\" \"npm --prefix client run dev\"",
+    "test": "npm --prefix server test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
